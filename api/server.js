@@ -12,7 +12,7 @@ const server = express();
 
 const sessionConfiguration = {
   name: "testing",
-  secret: "secret and safe",
+  secret: process.env.COOKIE_SECRET || "secret and safe",
   cookie: {
     maxAge: 1000 * 60 * 60, // valid for 1 hour
     secure: process.env.NODE_ENV === "development" ? false : true,
